@@ -1,0 +1,6 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if rabbitmq-server binary exists
+    test: which rabbitmq-server
+  - name: Check if rabbitmq-server is running
+    test: service rabbitmq-server status | grep "running"

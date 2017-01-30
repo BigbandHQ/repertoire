@@ -1,0 +1,22 @@
+description: Setup a nginx server block on Ubuntu 14.04
+before:
+  # - name: nginx/install
+  - name: misc/check-dependency
+    params:
+      binary_name: nginx
+after:
+  - name: nginx/restart
+params:
+  - name: server_name
+    label: Server name
+    default: example.io
+  - name: root
+    label: Root
+    default: /var/www/example.io/html
+files:
+  - name: index
+    label: Index page
+    default: /index.html
+  - name: conf
+    label: Config
+    default: /example.conf

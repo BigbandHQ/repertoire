@@ -1,0 +1,9 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if couchdb binary exists
+    test: which couchdb
+  - name: Check if couchdb is working
+    test: |
+      apt-get install -y curl
+      couchdb -b
+      curl http://127.0.0.1:5984 | grep "Welcome"

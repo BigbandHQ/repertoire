@@ -1,0 +1,22 @@
+description: Install and config LAMP stack on Ubuntu 14.04
+params:
+  - name: mysql_password
+    label: MySQL Password
+    default: 123secret
+  - name: install_libapache2_mod_php5
+    label: Install libapache2_mod_php5
+    default: 0
+    description: 0 = don't install, 1 = install
+  - name: install_php5_mcrypt
+    label: Install php5_mcrypt
+    default: 0
+    description: 0 = don't install, 1 = install
+before:
+  - name: apache/install
+  - name: mysql/install
+    params:
+      password: '{{ parent.params.mysql_password }}'
+  - name: php/install
+    params:
+      install_libapache2_mod_php5: '{{ parent.params.install_libapache2_mod_php5 }}'
+      install_php5_mcrypt: '{{ parent.params.install_php5_mcrypt }}'

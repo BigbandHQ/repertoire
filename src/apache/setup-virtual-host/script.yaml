@@ -1,0 +1,40 @@
+description: Set up an apache virtual host on Ubuntu 14.04
+before:
+  # - name: apache/install
+  - name: misc/check-dependency
+    params:
+      binary_name: apache2
+after:
+  - name: apache/restart
+params:
+  - name: host
+    label: Host
+    default: "*"
+  - name: port
+    label: Port number
+    default: 80
+  - name: server_name
+    label: Server name
+    default: example.io
+  - name: server_alias
+    label: Server alias
+    default: www.example.io
+  - name: server_admin
+    label: Server admin
+    default: admin@example.io
+  - name: error_log_path
+    label: Error log file
+    default: "${APACHE_LOG_DIR}/error.log"
+  - name: custom_log_path
+    label: Custom log file
+    default: "${APACHE_LOG_DIR}/access.log combined"
+  - name: document_root
+    label: Document root
+    default: /var/www/example.io/public_html
+files:
+  - name: index
+    label: Index page
+    default: /index.html
+  - name: conf
+    label: Config
+    default: /example.conf

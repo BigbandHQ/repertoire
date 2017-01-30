@@ -1,0 +1,19 @@
+description: Install and config latest nginx on Ubuntu 14.04
+after:
+  - name: nginx/restart
+params:
+  - name: user
+    label: User
+    default: www-data
+  - name: server_names_hash_bucket_size
+    label: Server names hash bucket size
+    default: 64
+    description: Numeric value (32, 64, ...)
+  - name: worker_processes
+    label: Worker processes
+    default: 1
+    description: Defines the number of worker processes. (numeric or auto)
+  - name: multi_accept
+    label: Multi accept
+    default: off
+    description: If multi_accept is disabled, a worker process will accept one new connection at a time. Otherwise, a worker process will accept all new connections at a time. (on or off)

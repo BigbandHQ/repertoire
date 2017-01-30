@@ -1,0 +1,10 @@
+description: Install php and dependencies on Ubuntu
+params:
+  - name: install_libapache2_mod_php5
+    label: Install libapache2-mod-php5
+    description: 1 = install, 0 = don't install
+    default: 0
+  - name: install_php5_mcrypt
+    label: Install php5-mcrypt
+    description: 1 = install, 0 = don't install
+    default: 0

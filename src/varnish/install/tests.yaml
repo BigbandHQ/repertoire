@@ -1,0 +1,6 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if varnish is working
+    test: |
+      #curl http://{{ params.host }}
+      curl http://127.0.0.1

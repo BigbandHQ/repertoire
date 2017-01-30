@@ -1,0 +1,14 @@
+description: Install and config MEAN stack on Ubuntu 14.04
+params:
+  - name: path
+    label: Path
+    description: The path where mean will be downloaded
+    default: ~/meanjs
+  - name: node_version
+    label: Node Version
+    default: 4
+before:
+  - name: mongodb/install
+  - name: node/install-version
+    params:
+      version: '{{ parent.params.node_version }}'

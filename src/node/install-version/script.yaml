@@ -1,0 +1,7 @@
+description: Install a specified nodejs version with nvm on Ubuntu
+before:
+  - name: curl/install
+params:
+  - name: version
+    label: Node Version
+    default: 7

@@ -1,0 +1,5 @@
+description: Install and config mysql on Ubuntu 14.04
+params:
+  - name: password
+    label: Database Password
+    default: secret

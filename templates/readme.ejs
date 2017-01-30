@@ -1,0 +1,64 @@
+# <%= path %>
+<% if (script.description) { -%>
+
+----
+
+## Description
+
+<%= script.description -%>
+
+<% } -%>
+<% if (script.params && script.params.length > 0) { -%>
+
+----
+
+## Params
+
+|  name  | default value  |  description  |
+|  ----- | -------------  |  -----------  |
+<% script.params.forEach(function(param) { -%>
+| <%= param.label %> | <%= param.default %> | <%= param.description %> |
+<% }); -%>
+<% } -%>
+<% if (script.files && script.files.length > 0) { -%>
+
+----
+
+## Files
+
+|  name  | default value  |  description  |
+|  ----- | -------------  |  -----------  |
+<% script.files.forEach(function(file) { -%>
+| <%= file.label %> | <%= file.default %> [view content](<%= repository + file.default %>) | <%= file.description %> |
+<% }); -%>
+<% } -%>
+<% if (script.before && script.before.length > 0) { -%>
+
+----
+
+## Before Scripts
+
+The following scripts will be executed **before** running *<%= path %>*.
+
+<% script.before.forEach(function(script) { -%>
+- [<%= script.name %>](<%= repository %>/<%= script.name %>)
+<% }); -%>
+<% } -%>
+<% if (script.after && script.after.length > 0) { -%>
+
+----
+
+## After Scripts
+
+The following scripts will be executed **after** running *<%= path %>*.
+
+<% script.after.forEach(function(script) { -%>
+- [<%= script.name %>](<%= repository %>/<%= script.name %>)
+<% }); -%>
+<% } -%>
+
+----
+
+## Contributing
+
+If you want to contribute to this script, please open an issue or a pull request.

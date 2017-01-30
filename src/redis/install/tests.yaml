@@ -1,0 +1,4 @@
+image: ubuntu:16.04
+tests:
+  - name: Check if redis is running
+    test: service redis-server status | grep "running"

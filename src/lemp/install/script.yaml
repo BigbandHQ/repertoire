@@ -1,0 +1,31 @@
+description: Install and config LEMP stack on Ubuntu 14.04
+params:
+  - name: nginx_user
+    label: NGINX User
+    default: www-data
+  - name: nginx_server_names_hash_bucket_size
+    label: NGINX Hash Bucket Size
+    default: 64
+    description: Numeric value (32, 64, ...)
+  - name: nginx_worker_processes
+    label: NGINX Worker Processes
+    default: 1
+    description: Defines the number of worker processes. (numeric or auto)
+  - name: nginx_multi_accept
+    label: NGINX Multi Accept
+    default: off
+    description: If multi_accept is disabled, a worker process will accept one new connection at a time. Otherwise, a worker process will accept all new connections at a time. (on or off)
+  - name: mysql_password
+    label: MySQL Password
+    default: 123secret
+before:
+  - name: nginx/install
+    params:
+      user: '{{ parent.params.nginx_user }}'
+      server_names_hash_bucket_size: '{{ parent.params.nginx_server_names_hash_bucket_size }}'
+      worker_processes: '{{ parent.params.nginx_worker_processes }}'
+      multi_accept: '{{ parent.params.nginx_multi_accept }}'
+  - name: mysql/install
+    params:
+      password: '{{ parent.params.mysql_password }}'
+  - name: php/install

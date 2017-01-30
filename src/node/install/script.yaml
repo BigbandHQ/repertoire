@@ -1,0 +1,6 @@
+description: Install nodejs and npm on Ubuntu
+params:
+  - name: install_npm
+    label: Install NPM
+    description: 1 = install, 0 = don't install
+    default: 1

@@ -1,0 +1,8 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if mongo binary exists
+    test: which mongo
+  - name: Check if mongod is working
+    test: |
+      service mongod start
+      service mongod status

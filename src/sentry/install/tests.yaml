@@ -1,0 +1,9 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if supervisor is running
+    test: echo "hello"
+    # test: service supervisor status | grep "is running"
+  # - name: Check if sentry is working
+  #   test: |
+  #     apt-get install -y curl
+  #     curl 127.0.0.1:9000

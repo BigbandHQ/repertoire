@@ -1,0 +1,4 @@
+image: ubuntu:14.04
+tests:
+  - name: check if composer binary exists
+    test: which composer

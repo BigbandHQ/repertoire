@@ -1,0 +1,8 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if nginx binary exists
+    test: which nginx
+  - name: Check if mysql binary exists
+    test: which mysql
+  - name: Check if php5 binary exists
+    test: which php5

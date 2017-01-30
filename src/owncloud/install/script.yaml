@@ -1,0 +1,3 @@
+description: Install owncloud on Ubuntu
+before:
+  - name: lamp/install

@@ -1,0 +1,14 @@
+description: Install java jre/jdk, OpenJDK and OracleJDK on Ubuntu 14.04
+params:
+  - name: java_type
+    label: Type
+    description: Choose beetween jre and jdk.
+    default: jdk
+  - name: install_openjdk
+    label: Install OpenJDK
+    description: 1 = install, 0 = don't install
+    default: 1
+  - name: install_oraclejdk
+    label: Install OracleJDK
+    description: 1 = install, 0 = don't install
+    default: 1

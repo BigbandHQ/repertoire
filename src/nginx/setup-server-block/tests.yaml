@@ -1,0 +1,8 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if server block is working
+    test: |
+      apt-get install -y curl
+      echo 127.0.0.1 example.io >> /etc/hosts
+      service nginx restart
+      curl http://example.io | grep "Success!"

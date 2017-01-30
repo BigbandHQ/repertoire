@@ -1,0 +1,7 @@
+description: Install and config mariadb on Ubuntu 14.04
+before:
+  - name: mysql/install
+params:
+  - name: password
+    label: Password
+    default: secret

@@ -1,0 +1,4 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if ES is running
+    test: service elasticsearch status | grep "running"

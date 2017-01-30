@@ -1,0 +1,14 @@
+description: Install and config Laravel on Ubuntu 14.04
+before:
+  - name: git/install
+  - name: curl/install
+  - name: nginx/install
+params:
+  - name: path
+    label: Path
+    description: The path where laravel will be installed.
+    default: /var/www/laravel
+files:
+  - name: nginx_conf
+    label: NGINX Configuration
+    default: /nginx.conf

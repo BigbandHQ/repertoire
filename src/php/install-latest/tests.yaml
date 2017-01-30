@@ -1,0 +1,11 @@
+image: ubuntu:14.04
+tests:
+  - name: Check php version
+    test: php -v | grep "7.0"
+  - name: Check if php is working
+    test: |
+      apt-get install -y apache2 curl
+      echo "<?php phpinfo(); ?>" > /var/www/html/info.php
+      echo 127.0.0.1 localhost >> /etc/hosts
+      service apache2 restart
+      curl http://127.0.0.1/info.php | grep "PHP Version"

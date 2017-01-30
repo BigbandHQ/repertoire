@@ -1,0 +1,4 @@
+image: ubuntu:16.04
+tests:
+  - name: Check if gitlab binary exists
+    test: which gitlab-ctl

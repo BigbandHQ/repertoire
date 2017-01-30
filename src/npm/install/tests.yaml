@@ -1,0 +1,4 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if npm binary exists
+    test: which npm

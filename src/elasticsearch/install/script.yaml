@@ -1,0 +1,5 @@
+description: Install and configure elasticsearch on Ubuntu 14.04
+params:
+  - name: network_host
+    label: Network Host
+    default: localhost

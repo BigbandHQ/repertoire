@@ -1,0 +1,4 @@
+description: Install composer on Ubuntu 14.04
+before:
+  - name: curl/install
+  - name: git/install

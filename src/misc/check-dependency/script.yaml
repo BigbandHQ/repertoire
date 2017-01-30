@@ -1,0 +1,5 @@
+description: Check if a binary exists
+params:
+  - name: binary_name
+    label: Binary name
+    default: 'nginx'

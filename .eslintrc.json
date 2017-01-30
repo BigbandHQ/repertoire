@@ -1,0 +1,17 @@
+{
+    "env": {
+      "node": true,
+      "commonjs": true,
+      "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "max-len": [2, 120, 2],
+      "no-param-reassign": ["error", { "props": false }],
+      "space-before-function-paren": ["error", { "anonymous": "never", "named": "never" }],
+      "key-spacing": ["error", { "mode": "minimum" }]
+    }
+}

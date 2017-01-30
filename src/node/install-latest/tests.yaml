@@ -1,0 +1,10 @@
+image: ubuntu:14.04
+tests:
+  - name: Check node version
+    test: |
+      source ~/.profile
+      node -v | grep "0.12.17"
+  - name: Check if npm binary exists
+    test: |
+      source ~/.profile
+      which npm

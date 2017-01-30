@@ -1,0 +1,18 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if mongo binary exists
+    test: which mongo
+  - name: Check node exists
+    test: |
+      source ~/.profile
+      node -v | grep "4"
+      which npm
+  - name: Check if grunt binary exists
+    test: which grunt
+  # - name: Check if mean.js app is working
+  #   test: |
+  #     source ~/.profile
+  #     cd ~/meanjs
+  #     nohup npm start
+  #     curl localhost:3000
+

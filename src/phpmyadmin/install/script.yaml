@@ -1,0 +1,13 @@
+description: Install and config phpmyadmin on Ubuntu 14.04
+params:
+  - name: mysql_password
+    label: MySQL Password
+    default: secret
+  - name: app_password
+    label: App Password
+    default: secret2
+before:
+  - name: apache/install
+  - name: mysql/install
+    params:
+      password: '{{ parent.params.mysql_password }}'

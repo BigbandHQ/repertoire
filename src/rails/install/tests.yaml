@@ -1,0 +1,18 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if rails binary exists
+    test: |
+      echo 'export PATH="\$HOME/.rbenv/bin:\$PATH"' >> ~/.bash_profile
+      echo 'eval "\$(rbenv init -)"' >> ~/.bash_profile
+      echo 'export PATH="\$HOME/.rbenv/plugins/ruby-build/bin:\$PATH"' >> ~/.bash_profile
+      source ~/.bash_profile
+      which rails
+  - name: Check if rails app is working
+    test: |
+      echo 'export PATH="\$HOME/.rbenv/bin:\$PATH"' >> ~/.bash_profile
+      echo 'eval "\$(rbenv init -)"' >> ~/.bash_profile
+      echo 'export PATH="\$HOME/.rbenv/plugins/ruby-build/bin:\$PATH"' >> ~/.bash_profile
+      source ~/.bash_profile
+      cd ~/testapp
+      rails server --binding=127.0.0.1 -d
+      curl http://127.0.0.1:3000 | grep "Yay! You&rsquo;re on Rails!"

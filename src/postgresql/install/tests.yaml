@@ -1,0 +1,4 @@
+image: ubuntu:14.04
+tests:
+  - name: Check if postgresql is working
+    test: service postgresql status | grep "online"

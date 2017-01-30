@@ -1,0 +1,28 @@
+description: Install and config latest haproxy on Ubuntu 14.04
+after:
+  - name: haproxy/restart
+params:
+  - name: user
+    label: User
+    description: Haproxy user name
+    default: haproxy
+  - name: group
+    label: Group
+    description: Haproxy group name
+    default: haproxy
+  - name: contimeout
+    label: Connection timeout
+    default: 5000
+  - name: clitimeout
+    label: Client timeout
+    default: 50000
+  - name: srvtimeout
+    label: Server timeout
+    default: 50000
+  - name: statstimeout
+    label: Stats timeout
+    default: 30s
+files:
+  - name: haproxy_cfg
+    label: Haproxy config
+    default: /haproxy.cfg

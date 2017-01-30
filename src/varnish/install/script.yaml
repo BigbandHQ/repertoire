@@ -1,0 +1,24 @@
+description: Install and config varnish on Ubuntu 14.04
+before:
+  - name: misc/check-dependency
+    params:
+      binary_name: nginx
+  - name: misc/check-dependency
+    params:
+      binary_name: curl
+after:
+  - name: apache/restart
+  - name: varnish/restart
+params:
+  - name: host
+    label: Host
+    default: 127.0.0.1
+  - name: port
+    label: Port
+    default: 80
+  - name: ttl
+    label: TTL
+    default: 10s
+  - name: grace
+    label: Grace
+    default: 1h
